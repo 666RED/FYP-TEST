@@ -1,0 +1,26 @@
+.eye-icon {
+	top: 30%;
+	right: 5px;
+	cursor: pointer;
+}
+
+.cancel-icon {
+	right: 10px;
+	top: 4%;
+	cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.forgot-password-text {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.try-another-way-text {
+	cursor: pointer;
+}
