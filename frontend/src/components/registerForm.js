@@ -1,4 +1,4 @@
-import { React, useReducer, useState } from "react";
+import { React, useReducer } from "react";
 import { BsEyeFill } from "react-icons/bs/index.js";
 import { MdCancel } from "react-icons/md/index.js";
 import { INITIAL_STATE, registerReducer } from "../reducers/registerReducer.js";
