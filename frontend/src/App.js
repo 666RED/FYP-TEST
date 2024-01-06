@@ -7,20 +7,19 @@ import ResetPassword from "./pages/resetPassword.js";
 
 function App() {
 	return (
-		<div></div>
-		// <Routes>
-		// 	<Route path="/" element={<Login />} />
-		// 	<Route path="/home" element={<Homepage />} />
-		// 	<Route path="/recover-password" element={<RecoverPassword />} />
-		// 	<Route
-		// 		path="/recover-password/auth/:userId"
-		// 		element={<AuthVerificationCode />}
-		// 	/>
-		// 	<Route
-		// 		path="/recover-password/reset-password/:userId"
-		// 		element={<ResetPassword />}
-		// 	/>
-		// </Routes>
+		<Routes>
+			<Route path="/" element={<Login />} />
+			<Route path="/home" element={<Homepage />} />
+			<Route path="/recover-password" element={<RecoverPassword />} />
+			<Route
+				path="/recover-password/auth/:userId"
+				element={<AuthVerificationCode />}
+			/>
+			<Route
+				path="/recover-password/reset-password/:userId"
+				element={<ResetPassword />}
+			/>
+		</Routes>
 	);
 }
 
