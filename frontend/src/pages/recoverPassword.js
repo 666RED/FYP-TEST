@@ -16,15 +16,18 @@ const RecoverPassword = () => {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			await fetch("http://localhost:5000/recover-password/auth-email", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userEmailAddress: email.toLowerCase(),
-				}),
-			})
+			await fetch(
+				"https://fyp-fsktm-connect.onrender.com/recover-password/auth-email",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userEmailAddress: email.toLowerCase(),
+					}),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.msg === "Not exist") {

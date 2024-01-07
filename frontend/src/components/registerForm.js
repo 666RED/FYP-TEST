@@ -26,7 +26,7 @@ const RegisterForm = ({ setDisplayRegForm }) => {
 				});
 				dispatch({ type: "INVALID_EMAIL" });
 			} else {
-				await fetch("http://localhost:5000/auth/register", {
+				await fetch("https://fyp-fsktm-connect.onrender.com/auth/register", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

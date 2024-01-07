@@ -20,13 +20,16 @@ const AuthVerificationCode = () => {
 	useEffect(() => {
 		const autoClearCodeRequest = async () => {
 			try {
-				await fetch("http://localhost:5000/recover-password/auto-clear-code", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ userId }),
-				})
+				await fetch(
+					"https://fyp-fsktm-connect.onrender.com/recover-password/auto-clear-code",
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ userId }),
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
 						if (data.msg === "User not found") {
@@ -75,15 +78,18 @@ const AuthVerificationCode = () => {
 
 	const handleReturn = async () => {
 		try {
-			await fetch("http://localhost:5000/recover-password/remove-code", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userId: userId,
-				}),
-			})
+			await fetch(
+				"https://fyp-fsktm-connect.onrender.com/recover-password/remove-code",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userId: userId,
+					}),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.msg === "User not found") {
@@ -103,7 +109,7 @@ const AuthVerificationCode = () => {
 		try {
 			setLoading(true);
 			await fetch(
-				`http://localhost:5000/recover-password/auth-verification-code`,
+				`https://fyp-fsktm-connect.onrender.com/recover-password/auth-verification-code`,
 				{
 					method: "POST",
 					headers: {
@@ -143,15 +149,18 @@ const AuthVerificationCode = () => {
 			setRemainingTime(codeExpireTime);
 			const resendLink = document.getElementById("resend-link");
 			resendLink.style.cursor = "";
-			await fetch(`http://localhost:5000/recover-password/resend-code`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userId: userId,
-				}),
-			})
+			await fetch(
+				`https://fyp-fsktm-connect.onrender.com/recover-password/resend-code`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userId: userId,
+					}),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.msg === "User not found") {

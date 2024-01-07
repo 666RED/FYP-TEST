@@ -25,7 +25,7 @@ const ResetPassword = () => {
 				setValidNewPassword(false);
 				setValidConfirmPassword(false);
 			} else {
-				await fetch(`http://localhost:5000/recover-password/reset-password`, {
+				await fetch(`https://fyp-fsktm-connect.onrender.com`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
