@@ -65,7 +65,7 @@ const RecoverPassword = () => {
 					<div className="position-absolute start-0">
 						<BackArrow destination="/" />
 					</div>
-					<h2 className="text-center m-0">Recover Password</h2>
+					<h3 className="text-center m-0">Recover Password</h3>
 				</div>
 				<hr />
 				<p>Enter your registered email to get 6-digit verification code</p>

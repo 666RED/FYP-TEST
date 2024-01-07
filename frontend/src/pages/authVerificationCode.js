@@ -186,7 +186,7 @@ const AuthVerificationCode = () => {
 					<div className="position-absolute start-0" onClick={handleReturn}>
 						<BackArrow destination="/recover-password" />
 					</div>
-					<h2 className="text-center m-0">Verify Code</h2>
+					<h3 className="text-center m-0">Verify Code</h3>
 				</div>
 				<hr />
 				<p>Please enter 6-digit verification code</p>

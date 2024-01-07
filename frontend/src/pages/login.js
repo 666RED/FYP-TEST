@@ -23,7 +23,7 @@ const Login = () => {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			await fetch("http://localhost:5000/auth/login", {
+			await fetch("https://fyp-fsktm-connect.onrender.com/auth/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -108,7 +108,7 @@ const Login = () => {
 						Forgot password?
 					</p>
 				</form>
-				<h2 className="text-center my-3">OR</h2>
+				<h2 className="text-center my-2">OR</h2>
 				<button
 					className="btn btn-success d-block mx-auto fs-5 mb-3"
 					onClick={() => setDisplayRegForm(true)}

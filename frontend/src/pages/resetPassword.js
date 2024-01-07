@@ -72,7 +72,7 @@ const ResetPassword = () => {
 					<div className="position-absolute start-0">
 						<BackArrow destination={`/recover-password/auth/${userId}`} />
 					</div>
-					<h2 className="text-center m-0">Reset Password</h2>
+					<h3 className="text-center m-0">Reset Password</h3>
 				</div>
 				<hr />
 				<p className="text-center">Enter new password and confirm password</p>
