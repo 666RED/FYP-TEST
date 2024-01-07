@@ -6,7 +6,13 @@ import "../styles/style.css";
 import { enqueueSnackbar } from "notistack";
 import Spinner from "./spinner.js";
 
-const RegisterForm = ({ setDisplayRegForm }) => {
+const RegisterForm = ({
+	setDisplayRegForm,
+	setLoginEmail,
+	setLoginPassword,
+	setLoginEmailBorder,
+	setLoginPasswordBorder,
+}) => {
 	const [state, dispatch] = useReducer(registerReducer, INITIAL_STATE);
 
 	const handleSubmit = async (e) => {
@@ -56,7 +62,11 @@ const RegisterForm = ({ setDisplayRegForm }) => {
 								variant: "success",
 							});
 							dispatch({ type: "SUCCESS_REGISTER" });
+							setLoginEmail("");
+							setLoginPassword("");
 							setDisplayRegForm(false);
+							setLoginEmailBorder(true);
+							setLoginPasswordBorder(true);
 						}
 					});
 			}

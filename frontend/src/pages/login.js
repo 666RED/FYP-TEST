@@ -6,17 +6,17 @@ import RegisterForm from "../components/registerForm.js";
 import "../styles/style.css";
 import { useSnackbar } from "notistack";
 import { BsEyeFill } from "react-icons/bs/index.js";
-import { INITIAL_STATE, loginReducer } from "../reducers/loginReducer.js";
 import Spinner from "../components/spinner.js";
 
 const Login = () => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [isUserExist, setIsUserExist] = useState(true);
+	const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
 	const [displayRegForm, setDisplayRegForm] = useState(false);
 	const [viewPassword, setViewPassword] = useState(false);
 	const { enqueueSnackbar } = useSnackbar();
-	const [state, dispatch] = useReducer(loginReducer, INITIAL_STATE);
 	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e) => {
@@ -36,14 +36,17 @@ const Login = () => {
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.msg === "Not exist") {
+						setIsUserExist(false);
+						setIsPasswordCorrect(true);
 						enqueueSnackbar("User does not exist", { variant: "error" });
-						dispatch({ type: "USER_NOT_EXIST" });
 					} else if (data.msg === "Invalid credentials") {
+						setIsUserExist(true);
+						setIsPasswordCorrect(false);
 						enqueueSnackbar("Incorrect password", { variant: "error" });
-						dispatch({ type: "INCORRECT_PASSWORD" });
 					} else if (data.msg === "Success") {
+						setIsUserExist(true);
+						setIsPasswordCorrect(true);
 						enqueueSnackbar("Login", { variant: "success" });
-						dispatch({ type: "LOGIN" });
 						navigate("/home");
 					}
 					setLoading(false);
@@ -57,7 +60,15 @@ const Login = () => {
 	return (
 		<div>
 			{loading && <Spinner />}
-			{displayRegForm && <RegisterForm setDisplayRegForm={setDisplayRegForm} />}
+			{displayRegForm && (
+				<RegisterForm
+					setDisplayRegForm={setDisplayRegForm}
+					setLoginEmail={setEmail}
+					setLoginPassword={setPassword}
+					setLoginEmailBorder={setIsUserExist}
+					setLoginPasswordBorder={setIsPasswordCorrect}
+				/>
+			)}
 			<div className="container mt-3" style={{ maxWidth: "400px" }}>
 				<h1>Logo</h1>
 				<form
@@ -74,7 +85,7 @@ const Login = () => {
 						maxLength={50}
 						value={email}
 						className={`form-control ${
-							state.isUserExist ? "border-secondary" : "border-danger"
+							isUserExist ? "border-secondary" : "border-danger"
 						} mt-4 py-3`}
 						placeholder="Student / Staff Email Address"
 						required
@@ -88,7 +99,7 @@ const Login = () => {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							className={`form-control my-4 ${
-								state.isPasswordCorrect ? "border-secondary" : "border-danger"
+								isPasswordCorrect ? "border-secondary" : "border-danger"
 							} py-3`}
 							placeholder="Password"
 							required
