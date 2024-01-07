@@ -25,16 +25,19 @@ const ResetPassword = () => {
 				setValidNewPassword(false);
 				setValidConfirmPassword(false);
 			} else {
-				await fetch(`https://fyp-fsktm-connect.onrender.com`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						userId: userId,
-						newPassword: newPassword,
-					}),
-				})
+				await fetch(
+					`https://fyp-fsktm-connect.onrender.com/recover-password/reset-password`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							userId: userId,
+							newPassword: newPassword,
+						}),
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
 						if (data.msg === "User not found") {
