@@ -83,7 +83,7 @@ const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {
 												? "20px"
 												: windowWidth > 500
 												? "16px"
-												: "10px",
+												: "12px",
 									}}
 									onClick={() => navigate(`/profile/edit-profile/${userId}`)}
 								>
@@ -97,7 +97,7 @@ const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {
 												? "20px"
 												: windowWidth > 500
 												? "16px"
-												: "10px",
+												: "12px",
 									}}
 									onClick={() =>
 										setShowAddNewPostForm((prevState) => !prevState)
@@ -113,7 +113,7 @@ const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {
 												? "20px"
 												: windowWidth > 500
 												? "16px"
-												: "10px",
+												: "12px",
 									}}
 									onClick={() => navigate(`/profile/view-friends/${userId}`)}
 								>
