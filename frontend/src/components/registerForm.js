@@ -4,7 +4,7 @@ import { MdCancel } from "react-icons/md/index.js";
 import { INITIAL_STATE, registerReducer } from "../reducers/registerReducer.js";
 import "../styles/style.css";
 import { enqueueSnackbar } from "notistack";
-import Spinner from "./spinner.js";
+import Spinner from "./Spinner.js";
 
 const RegisterForm = ({
 	setDisplayRegForm,
@@ -96,7 +96,7 @@ const RegisterForm = ({
 					{/* inputs */}
 					{/* NAME */}
 					<label htmlFor="register-name" className="form-label">
-						Name:{" "}
+						Name:
 					</label>
 					<input
 						type="text"
