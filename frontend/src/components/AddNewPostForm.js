@@ -63,7 +63,6 @@ const AddNewPostForm = ({ setShowAddNewPostForm, userId, setPostAdded }) => {
 							onClick={() => setShowAddNewPostForm(false)}
 						/>
 						<hr />
-						{/* inputs */}
 						{/* TEXT */}
 						<label htmlFor="text-description" className="form-label">
 							Text description:
