@@ -113,7 +113,7 @@ const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {
 												? "20px"
 												: windowWidth > 500
 												? "16px"
-												: "12px",
+												: "13px",
 									}}
 									onClick={() => navigate(`/profile/view-friends/${userId}`)}
 								>
