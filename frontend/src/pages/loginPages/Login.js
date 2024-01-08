@@ -116,7 +116,7 @@ const Login = () => {
 						className="text-center d-block mt-4 text-primary forgot-password-text"
 						onClick={() => navigate("/recover-password")}
 					>
-						Forgot password?
+						Forgot password?1
 					</p>
 				</form>
 				<h2 className="text-center my-2">OR</h2>
