@@ -7,7 +7,7 @@ const UserPost = ({ userId, postAdded }) => {
 
 	useEffect(() => {
 		const getPost = async () => {
-			await fetch("http://localhost:5000/post/get-posts", {
+			await fetch("https://fyp-social-media.onrender.com/post/get-posts", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

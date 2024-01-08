@@ -16,7 +16,8 @@ const EditProfile = () => {
 	const { enqueueSnackbar } = useSnackbar();
 	const [loading, setLoading] = useState(false);
 	const [toggleEdit, setToggleEdit] = useState(true);
-	const filePath = "http://localhost:5000/public/images/profile/";
+	const filePath =
+		"https://fyp-social-media.onrender.com/public/images/profile/";
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -34,12 +35,15 @@ const EditProfile = () => {
 		const fetchData = async () => {
 			setLoading(true);
 			try {
-				await fetch(`http://localhost:5000/profile?userId=${userId}`, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-					},
-				})
+				await fetch(
+					`https://fyp-social-media.onrender.com/profile?userId=${userId}`,
+					{
+						method: "GET",
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}
+				)
 					.then((res) => res.json())
 					.then(({ msg, user = {} }) => {
 						if (msg === "User not found") {
@@ -73,10 +77,13 @@ const EditProfile = () => {
 			formdata.append("userId", userId);
 			formdata.append("bio", bio);
 
-			await fetch("http://localhost:5000/profile/edit-profile", {
-				method: "POST",
-				body: formdata,
-			})
+			await fetch(
+				"https://fyp-social-media.onrender.com/profile/edit-profile",
+				{
+					method: "POST",
+					body: formdata,
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.msg === "User not found") {

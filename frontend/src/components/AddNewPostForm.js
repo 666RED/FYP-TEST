@@ -21,7 +21,7 @@ const AddNewPostForm = ({ setShowAddNewPostForm, userId, setPostAdded }) => {
 			formdata.append("image", image);
 			formdata.append("userId", userId);
 
-			await fetch("http://localhost:5000/post/add-new-post", {
+			await fetch("https://fyp-social-media.onrender.com/post/add-new-post", {
 				method: "POST",
 				body: formdata,
 			})

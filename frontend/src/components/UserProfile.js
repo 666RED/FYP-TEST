@@ -11,18 +11,22 @@ const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {
 	const [bio, setBio] = useState("");
 	const [loading, setLoading] = useState(false);
 	const { enqueueSnackbar } = useSnackbar();
-	const filePath = "http://localhost:5000/public/images/profile/";
+	const filePath =
+		"https://fyp-social-media.onrender.com/public/images/profile/";
 
 	useEffect(() => {
 		const fetchData = async () => {
 			setLoading(true);
 			try {
-				await fetch(`http://localhost:5000/profile?userId=${userId}`, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-					},
-				})
+				await fetch(
+					`https://fyp-social-media.onrender.com/profile?userId=${userId}`,
+					{
+						method: "GET",
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}
+				)
 					.then((res) => res.json())
 					.then(({ msg, user = {} }) => {
 						if (msg === "User not found") {

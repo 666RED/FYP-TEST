@@ -5,8 +5,10 @@ import { FaCommentDots } from "react-icons/fa/index.js";
 import "../styles/style.css";
 
 const Post = ({ post }) => {
-	const profileImgPath = "http://localhost:5000/public/images/profile/";
-	const postImgPath = "http://localhost:5000/public/images/post/";
+	const profileImgPath =
+		"https://fyp-social-media.onrender.com/public/images/profile/";
+	const postImgPath =
+		"https://fyp-social-media.onrender.com/public/images/post/";
 
 	const [liked, setLiked] = useState(post.isLiked);
 	const [isActive, setIsActive] = useState(false);
@@ -22,7 +24,7 @@ const Post = ({ post }) => {
 				}, 300);
 				setLikes((prevState) => prevState + 1);
 
-				await fetch("http://localhost:5000/post/up-likes", {
+				await fetch("https://fyp-social-media.onrender.com/post/up-likes", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -38,7 +40,7 @@ const Post = ({ post }) => {
 			} else {
 				setLikes((prevState) => prevState - 1);
 
-				await fetch("http://localhost:5000/post/down-likes", {
+				await fetch("https://fyp-social-media.onrender.com/post/down-likes", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
