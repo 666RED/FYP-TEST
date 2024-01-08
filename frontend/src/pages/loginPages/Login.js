@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "../../components/footer.js";
-import RegisterForm from "../../components/registerForm.js";
+import Footer from "../../components/Footer.js";
+import RegisterForm from "../../components/RegisterForm.js";
 import "../../styles/style.css";
 import { useSnackbar } from "notistack";
 import { BsEyeFill } from "react-icons/bs/index.js";
-import Spinner from "../../components/spinner.js";
+import Spinner from "../../components/Spinner.js";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -116,7 +116,7 @@ const Login = () => {
 						className="text-center d-block mt-4 text-primary forgot-password-text"
 						onClick={() => navigate("/recover-password")}
 					>
-						Forgot password?1
+						Forgot password?
 					</p>
 				</form>
 				<h2 className="text-center my-2">OR</h2>

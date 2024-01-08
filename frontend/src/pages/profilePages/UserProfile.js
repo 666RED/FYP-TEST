@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import BackArrow from "../../components/backArrow.js";
-import UserProfile from "../../components/userProfile.js";
-import UserPost from "../../components/userPost.js";
-import AddNewPostForm from "../../components/addNewPostForm.js";
+import BackArrow from "../../components/BackArrow.js";
+import UserProfile from "../../components/UserProfile.js";
+import UserPost from "../../components/UserPost.js";
+import AddNewPostForm from "../../components/AddNewPostForm.js";
 
 const Profile = () => {
 	const userId = useParams().userId;

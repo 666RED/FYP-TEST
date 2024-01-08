@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 import "../../styles/style.css";
 import { useNavigate } from "react-router-dom";
-import BackArrow from "../../components/backArrow.js";
+import BackArrow from "../../components/BackArrow.js";
 import { useSnackbar } from "notistack";
-import Spinner from "../../components/spinner.js";
+import Spinner from "../../components/Spinner.js";
 
 const RecoverPassword = () => {
 	const navigate = useNavigate();

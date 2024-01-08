@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Spinner from "./spinner.js";
+import Spinner from "./Spinner.js";
 import { useSnackbar } from "notistack";
 
 const UserProfile = ({ windowWidth, userId, setShowAddNewPostForm }) => {

@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import BackArrow from "../../components/backArrow.js";
+import BackArrow from "../../components/BackArrow.js";
 import { useSnackbar } from "notistack";
-import Spinner from "../../components/spinner.js";
+import Spinner from "../../components/Spinner.js";
 
 const EditProfile = () => {
 	const userId = useParams().userId;

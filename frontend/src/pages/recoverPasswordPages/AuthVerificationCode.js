@@ -2,8 +2,8 @@ import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
-import BackArrow from "../../components/backArrow.js";
-import Spinner from "../../components/spinner.js";
+import BackArrow from "../../components/BackArrow.js";
+import Spinner from "../../components/Spinner.js";
 
 const AuthVerificationCode = () => {
 	const codeExpireTime = 60;

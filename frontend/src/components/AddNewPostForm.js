@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { MdCancel } from "react-icons/md/index.js";
-import Spinner from "./spinner.js";
-import UploadImage from "./uploadImage.js";
+import Spinner from "./Spinner.js";
+import UploadImage from "./UploadImage.js";
 import "../styles/style.css";
 import { useSnackbar } from "notistack";
 

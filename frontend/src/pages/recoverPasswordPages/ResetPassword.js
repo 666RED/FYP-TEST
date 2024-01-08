@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import BackArrow from "../../components/backArrow.js";
-import Spinner from "../../components/spinner.js";
+import BackArrow from "../../components/BackArrow.js";
+import Spinner from "../../components/Spinner.js";
 import { useSnackbar } from "notistack";
 
 const ResetPassword = () => {
