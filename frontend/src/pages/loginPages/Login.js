@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "../../components/Footer.js";
-import RegisterForm from "../../components/RegisterForm.js";
+import Footer from "../../components/footer.js";
+import RegisterForm from "../../components/registerForm.js";
 import "../../styles/style.css";
 import { useSnackbar } from "notistack";
 import { BsEyeFill } from "react-icons/bs/index.js";
-import Spinner from "../../components/Spinner.js";
+import Spinner from "../../components/spinner.js";
 
 const Login = () => {
 	const navigate = useNavigate();

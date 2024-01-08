@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { MdCancel } from "react-icons/md/index.js";
-import Spinner from "./Spinner.js";
-import UploadImage from "./UploadImage.js";
+import Spinner from "./spinner.js";
+import UploadImage from "./uploadImage.js";
 import "../styles/style.css";
 import { useSnackbar } from "notistack";
 
@@ -48,6 +48,7 @@ const AddNewPostForm = ({ setShowAddNewPostForm, userId, setPostAdded }) => {
 
 	return (
 		<div>
+			{loading && <Spinner />}
 			<div className="z-1 position-fixed top-0 bottom-0 start-0 end-0 bg-dark opacity-75"></div>
 			<div className="z-2 position-fixed top-0 bottom-0 start-0 end-0 d-flex align-items-center justify-content-center">
 				<form
