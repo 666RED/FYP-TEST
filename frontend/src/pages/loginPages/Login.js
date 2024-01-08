@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "../../components/Footer.js";
 import RegisterForm from "../../components/RegisterForm.js";
 import "../../styles/style.css";
 import { useSnackbar } from "notistack";
@@ -127,7 +126,11 @@ const Login = () => {
 					Register New Account
 				</button>
 			</div>
-			<Footer />
+			<footer className="bg-dark py-1 fixed-bottom bottom-0 start-0 end-0 z-n1">
+				<p className="text-white text-center m-0" style={{ fontSize: "12px" }}>
+					Copyright &#169; 2024
+				</p>
+			</footer>
 		</div>
 	);
 };
